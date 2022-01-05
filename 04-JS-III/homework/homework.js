@@ -126,7 +126,7 @@ function promedioResultadosTest(resultadosTest) {
   const callBack = (prev, curr) => prev + curr;
   const reduce = resultadosTest.reduce(callBack);
   const average = reduce / resultadosTest.length;
-  return average
+  return average;
 
 }
 
@@ -136,6 +136,8 @@ function numeroMasGrande(numeros) {
   // Devuelve el número más grande
   // Tu código:
 
+  // Agregar una forma diferente para resolver el problema con un ciclo for
+  
   numeros.sort((a, b) => b - a);
   return numeros[0];
 
@@ -267,6 +269,8 @@ function mesesDelAño(array) {
     }
         
   }
+
+  // ARREGLAR PROBLEMA DE RETORNO
 
   return busqueda.length >= meses.length ? busqueda.sort((a, b) => b - a) : "No se encontraron los meses pedidos";
 

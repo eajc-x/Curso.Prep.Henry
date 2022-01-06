@@ -136,8 +136,20 @@ function numeroMasGrande(numeros) {
   // Devuelve el número más grande
   // Tu código:
 
-  // Agregar una forma diferente para resolver el problema con un ciclo for
-  
+  // Se agrego una nueva solución con for...of
+
+
+  // Sol. 2
+  // let max = numeros[0];
+
+  // for (const value of numeros) {
+  //   if( value > max ) { max = value }
+  // }
+
+  // return max;
+
+
+  // Sol. 3
   numeros.sort((a, b) => b - a);
   return numeros[0];
 
@@ -226,9 +238,9 @@ function empiezaConNueve(n) {
   //inicia con 9 y false en otro caso.
   //Escribe tu código aquí
   
-  const letter = n.toString();
-  const vocal = letter.charAt(0);
-  if (vocal === '9') return true;
+  const numero = n.toString();
+  const str = numero.charAt(0);
+  if (str === '9') return true;
 
   return false;
 
@@ -243,7 +255,7 @@ function todosIguales(arreglo) {
   const orden = (el, el2) => el - el2;
   arreglo.sort(orden);
 
-  return arreglo[0] === arreglo[arreglo.length - 1] ? true : false;
+  return arreglo[0] === arreglo[arreglo.length - 1];
 
 }
 
@@ -270,9 +282,9 @@ function mesesDelAño(array) {
         
   }
 
-  // ARREGLAR PROBLEMA DE RETORNO
+  // Se arreglo la comparación del retorno.
 
-  return busqueda.length >= meses.length ? busqueda.sort((a, b) => b - a) : "No se encontraron los meses pedidos";
+  return busqueda.length === meses.length ? busqueda.sort((a, b) => b - a) : "No se encontraron los meses pedidos";
 
 }
 
@@ -325,23 +337,23 @@ function breakStatement(numero) {
   
   while (e < 10) {
     
-      if ( breaks.length === 0 ) {
-          breaks.push(numero+2);
-          e++;
-      }
-
-      curr = breaks[e - 1];
-      next = curr + 2;
-      breaks.push(next);
+    if ( breaks.length === 0 ) {
+      breaks.push(numero+2);
       e++;
-      
-      if ( breaks.length === 10 ) {
-          return breaks;
-      }
+    }
 
-      if ( e === next ) {
-          break;
-      }
+    curr = breaks[e - 1];
+    next = curr + 2;
+    breaks.push(next);
+    e++;
+    
+    if ( breaks.length === 10 ) {
+      return breaks;
+    }
+
+    if ( e === next ) {
+      break;
+    }
 
   }
   
@@ -366,8 +378,8 @@ function continueStatement(numero) {
   while (e < 9) {
     
     if ( flow.length === 0 ) {
-        flow.push(numero+2);
-        e++;
+      flow.push(numero+2);
+      e++;
     }
 
     curr = flow[e - 1];
@@ -376,7 +388,7 @@ function continueStatement(numero) {
     e++;
       
     if ( e === 5 ) {
-        continue;
+      continue;
     }
 
   }
